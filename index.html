@@ -26,7 +26,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="icon" href="./static/images/cake.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -100,7 +100,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of California Irvine</span>
+            <span class="author-block"><sup>1</sup>University of California Irvine,</span>
             <span class="author-block"><sup>2</sup>Envive</span>
           </div>
 
@@ -244,13 +244,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
           <p>
-            <b>What is semantic control?</b>Semantic control entails steering LM generations towards satisfying subtle non-lexical constraints--e.g., toxicity, sentiment, or politeness--attributes that can be captured by a sequence-level <em>verifier</em>. It can thus be viewed as sampling from the LM distribution conditioned on the target attribute, a computationally intractable problem due to the non-decomposable nature of the verifier.
+            <b>What is semantic control?</b> Semantic control entails steering LM generations towards satisfying subtle non-lexical constraints--e.g., toxicity, sentiment, or politeness--attributes that can be captured by a sequence-level <em>verifier</em>. It can thus be viewed as sampling from the LM distribution conditioned on the target attribute, a computationally intractable problem due to the non-decomposable nature of the verifier.
           </p>
           <p>
-            <b>How do previous approaches tackle semantic control?</b>Existing approaches to LM control either only deal with syntactic constraints which cannot capture the aforementioned attributes, or rely on sampling to explore the conditional LM distribution, an ineffective estimator for low-probability events.
+            <b>How do previous approaches tackle semantic control?</b> Existing approaches to LM control either only deal with syntactic constraints which cannot capture the aforementioned attributes, or rely on sampling to explore the conditional LM distribution, an ineffective estimator for low-probability events.
           </p>
           <p>
             <b>Our contribution:</b> In this work, we leverage a verifier's gradient information to efficiently reason over <em>all</em> generations that satisfy the target attribute, enabling precise steering of LM generations by reweighing the next-token distribution.
@@ -266,7 +266,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!--/ Abstract. -->
 
     <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
+    <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
@@ -274,7 +274,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--/ Paper video. -->
   </div>
 </section>
@@ -284,9 +284,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container is-max-desktop">
 
     <div class="columns is-centered">
-
       <!-- Visual Effects. -->
-      <div class="column">
+      <!-- <div class="column">
         <div class="content">
           <h2 class="title is-3">Visual Effects</h2>
           <p>
@@ -298,11 +297,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     type="video/mp4">
           </video>
         </div>
-      </div>
+      </div> -->
       <!--/ Visual Effects. -->
 
       <!-- Matting. -->
-      <div class="column">
+      <!-- <div class="column">
         <h2 class="title is-3">Matting</h2>
         <div class="columns is-centered">
           <div class="column content">
@@ -317,16 +316,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
 
         </div>
-      </div>
+      </div> -->
     </div>
     <!--/ Matting. -->
 
     <!-- Animation. -->
-    <div class="columns is-centered">
+    <!-- <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Animation</h2>
 
-        <!-- Interpolating. -->
         <h3 class="title is-4">Interpolating states</h3>
         <div class="content has-text-justified">
           <p>
@@ -358,9 +356,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
         <br/>
-        <!--/ Interpolating. -->
 
-        <!-- Re-rendering. -->
         <h3 class="title is-4">Re-rendering the input video</h3>
         <div class="content has-text-justified">
           <p>
@@ -379,15 +375,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     type="video/mp4">
           </video>
         </div>
-        <!--/ Re-rendering. -->
 
       </div>
-    </div>
+    </div> -->
     <!--/ Animation. -->
 
-
-    <!-- Concurrent Work. -->
     <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Author Contributions</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            <b>Kareem Ahmed</b> Conceived and developed the core research idea and the proposed approach. Wrote the introduction and technical sections of the paper. Wrote the code for computing the expected embedding and contributed to debugging the overall approach.
+          </p>
+          <p>
+            <b>Catarina G Belem</b> Implemented the primary codebase. Conducted all experiments and wrote the corresponding experimental section of the paper in addition to the related works.
+          </p>
+          <p>
+            <b>Padhraic Smyth</b> and <b>Sameer Singh</b> both provided mentorship, supervision, and advisory support throughout the project. Offered critical feedback on the methodology and the manuscript. All authors read and approved the final manuscript.
+          </p>
+          <p>
+            <b>Sameer Singh</b>
+          </p>
+        </div>
+      </div>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Acknowledgments</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            This work is supported by the DARPA ANSR program FA8750-0004, an NSF CAREER award number IIS-2046873 and an NSF award number 1900644. The conclusions are of the authors and do not reflect the official policy or position of DARPA or the U.S. Government.
+          </p>
+        </div>
+      </div>
+    <!-- Concurrent Work. -->
+    <!-- <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Related Links</h2>
 
@@ -410,9 +434,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </p>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--/ Concurrent Work. -->
-
   </div>
 </section>
 
