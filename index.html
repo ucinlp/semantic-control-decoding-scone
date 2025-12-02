@@ -169,19 +169,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-body">
       <img src="./static/images/scone_method.png" alt="">
       <h2 class="subtitle has-text-centered">
-        <strong>Illustration of <span class="dnerf">SCone</span></strong>
-(a) Given a prefix (pre), the LM defines a distribution over possible next-tokens.
-(b) For each possible next-token, we <em>efficiently</em> simulate future generation.
-(c) An LM sample induces an approximate LM distribution assigning high probability
-to similar samples and low probability to dissimilar samples.
-(d) Evaluating a verifier on a single simulated generation, we can use the first-order
-information to locally approximate the verifier on <em>all</em> possible generations,
-factoring in the probability of each generations w.r.t. the LM.
-(e) This yields a probability of the constraint, 𝒜, the set of all generations
-satisfying a target attributed <b>a</b> being satisfied, used to reweigh the next-token distribution.
-(f) This results in a new distribution that discounts fluent but constraint violating generations
-in favor of less likely but constraint satisfying generations.
-         
+        <strong><span class="dnerf">SCone</span> leverages a verifier's gradient information to efficiently reason over <i>all</i> generations that satisfy the target attribute:</strong>
+        (a) Given a prefix (pre), the LM defines a distribution over possible next-tokens.
+        (b) For each possible next-token, we <em>efficiently</em> simulate future generation. 
+        (c) An LM sample induces an approximate LM distribution assigning high probability to similar samples and low probability to dissimilar samples.
+        (d) Evaluating a verifier on a single simulated generation, we can use the first-order information to locally approximate the verifier on <em>all</em> possible generations, factoring in the probability of each generations w.r.t. the LM.
+        (e) This yields a probability of the constraint, 𝒜, the set of all generations satisfying a target attributed <b>a</b> being satisfied, used to reweigh the next-token distribution.
+        (f) This results in a new distribution that discounts fluent but constraint violating generations in favor of less likely but constraint satisfying generations. 
       </h2>
     </div>
   </div>
