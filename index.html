@@ -164,12 +164,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<section class="hero teaser">
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
         <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
+                type="video/mp4"> TODO: Add qualitative examples
       </video>
       <h2 class="subtitle has-text-centered">
         <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
@@ -178,10 +178,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </h2>
     </div>
   </div>
-</section>
+</section> -->
 
 
-<section class="hero is-light is-small">
+<!-- <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
@@ -236,7 +236,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <section class="section">
@@ -247,31 +247,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            <b>What is semantic control?</b>Semantic control entails steering LM generations towards satisfying subtle non-lexical constraints--e.g., toxicity, sentiment, or politeness--attributes that can be captured by a sequence-level <em>verifier</em>. It can thus be viewed as sampling from the LM distribution conditioned on the target attribute, a computationally intractable problem due to the non-decomposable nature of the verifier.
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
+            <b>How do previous approaches tackle semantic control?</b>Existing approaches to LM control either only deal with syntactic constraints which cannot capture the aforementioned attributes, or rely on sampling to explore the conditional LM distribution, an ineffective estimator for low-probability events.
           </p>
           <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            <b>Our contribution:</b> In this work, we leverage a verifier's gradient information to efficiently reason over <em>all</em> generations that satisfy the target attribute, enabling precise steering of LM generations by reweighing the next-token distribution.
+            <!-- <span class="dnerf">SConE</span>  -->
+            Starting from an initial sample, we create a local LM distribution favoring semantically similar sentences. This approximation enables the tractable computation of an <em>expected sentence embedding</em>.
+            We use this expected embedding, informed by the verifier's evaluation at the initial sample, to estimate the probability of satisfying the constraint, which directly informs the update to the next-token distribution.
+          </p>
+          <p><b>Does it work?</b> We evaluated our approach on the tasks of controlling the toxicity, sentiment, and topic-adherence of LMs yielding generations satisfying the constraint with high probability without degrading their quality.
           </p>
         </div>
       </div>
